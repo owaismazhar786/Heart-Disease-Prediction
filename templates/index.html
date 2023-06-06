@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Heart Disease Prediction</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            background-image: url("{{ url_for('static', filename='img4.jpg') }}");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-top: 100px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .form-group label {
+            font-weight: bold;
+        }
+
+        button[type="submit"] {
+            background-color: #007bff;
+            border: none;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0069d9;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="mt-5">Heart Disease Prediction</h1>
+        <form action="/predict" method="POST">
+            <div class="form-group">
+                <label for="age" title="Select the age of the patient">Age:</label>
+                <input type="number" id="age" name="age" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="sex" title="Select the sex of the patient">Sex:</label>
+                <select class="form-control" id="sex" name="sex">
+                    <option value="1">Male</option>
+                    <option value="0">Female</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="cp" title="Select the cp of the patient">CP:</label>
+                <select class="form-control" id="cp" name="cp">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="chol" title="Select the chol of the patient">chol:</label>
+                <input type="number" id="chol" name="chol" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="trestbps" title="Select the trestbps of the patient">trestbps:</label>
+                <input type="number" id="trestbps" name="trestbps" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="fbs" title="Select the fbs of the patient">fbs:</label>
+                <select class="form-control" id="fbs" name="fbs">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="restecg" title="Select the restecg of the patient">restecg:</label>
+                <select class="form-control" id="restecg" name="restecg">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="thalach" title="Select the thalach of the patient">thalach:</label>
+                <input type="number" id="thalach" name="thalach" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="exang" title="Select the exang of the patient">exang:</label>
+                <select class="form-control" id="exang" name="exang">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="oldpeak" title="Select the oldpeak of the patient">oldpeak:</label>
+                <input type="number" id="oldpeak" name="oldpeak" class="form-control" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="slope" title="Select the slope of the patient">slope:</label>
+                <select class="form-control" id="slope" name="slope">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="ca" title="Select the ca of the patient">ca:</label>
+                <select class="form-control" id="ca" name="ca">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="thal" title="Select the thal of the patient">thal:</label>
+                <select class="form-control" id="thal" name="thal">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+            </div>
+            <input type="submit" class="btn btn-primary" value="Predict">
+        </form>
+    </div>
+</body>
+
+</html>
